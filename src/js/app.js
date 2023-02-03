@@ -17,6 +17,16 @@ document.addEventListener("DOMContentLoaded", () => {
       article.textContent = `This is message ${i + 1}`;
       body.appendChild(article);
     }
+    describe('My website', () => {
+  it('creates five message elements', () => {
+    cy.visit('http://localhost:3000');
+
+    cy.get('.button').click();
+
+    cy.get('.message', { timeout: 10000 }).should('have.length', 5);
+  });
+});
+
   });
 });
 
